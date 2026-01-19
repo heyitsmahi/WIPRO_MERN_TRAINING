@@ -1,0 +1,49 @@
+<!--a company wants to automate monthly salary calculation for employees based on their working days, basic pay and bonus
+ . create a script file to 
+ a) calculate gross salary
+ b) apply tax deduction 
+ c) display employee net salary-->
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let employeeName = "Rahul";
+let basicPay = 60000;     
+let bonus = 5000;         
+let workingDays = 26;     
+let totalDays = 30;
+
+
+let perDaySalary = basicPay / totalDays;
+let grossSalary = (perDaySalary * workingDays) + bonus;
+
+
+let tax;
+
+if (grossSalary > 50000) {
+    tax = grossSalary * 0.10; 
+} else {
+    tax = grossSalary * 0.05; 
+}
+
+
+let netSalary = grossSalary - tax;
+
+
+console.log("Employee Name: " + employeeName);
+console.log("Gross Salary: " + grossSalary);
+console.log("Tax Deduction: " + tax);
+console.log("Net Salary: " + netSalary);
+
+
+
+</script>
+</body>
+</html>
+

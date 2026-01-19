@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--<script>
+        const products=[{name:"Phone", price: 30000},
+                         {name:"Laptop", price: 50000},
+                         {name:"Mouse", price: 900}]
+        document.writeln("Original Prices:" +products);
+        const discountedprice=price.map(p=>({...p ,price:p.price * 0.10}));
+        document.writeln("Discounted Prices (10% off): " + discountedPrice + "<br><br>"); // ... -> spread operator --- it will take all the elements , here all the names  it wil copy all properties of the original product and apply discount on it .
+        //  p arrow function will take each product p from array and return a new onj.  -->
+         <!--<script>
+  const items = [
+    { name: "Mobile", price: 3000 },
+    { name: "Headphones", price: 1500 },
+    { name: "Keyboard", price: 2500 },
+    { name: "Monitor", price: 4000 }
+  ];
+  const discountPercent = 10;
+  const discountedItems = [];
+  document.writeln("<b>Original Items:</b><br>");
+  items.forEach(item => {
+    document.writeln(item.name + " : " + item.price + "<br>");
+  });
+  document.writeln("<br>");
+  
+  for (let i = 0; i < items.length; i++) {
+    let discountAmount = (items[i].price * discountPercent) / 100;
+    let finalPrice = items[i].price - discountAmount;
+    discountedItems.push({
+      name: items[i].name,
+      price: finalPrice
+    });
+  }
+  document.writeln("<b>Discounted Items (10% off):</b><br>");
+  discountedItems.forEach(item => {
+    document.writeln(item.name + " : " + item.price + "<br>");
+  });
+  document.writeln("<br>");
+  const filteredItems = discountedItems.filter(item => item.price > 2000);
+  document.writeln("<b>Filtered Items (Price > 2000):</b><br>");
+  filteredItems.forEach(item => {
+    document.writeln(item.name + " : " + item.price + "<br>");
+  });
+  document.writeln("<br>");
+  let totalAmount = 0;
+  discountedItems.forEach(item => {
+    totalAmount += item.price;
+  });
+  document.writeln("<b>Total Accumulated Price:</b> " + totalAmount);
+</script>
+    </script> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Price Calculation</title>
+</head>
+<body>
+    <pre id = "output"></pre> <!--to print and link with jSON -->
+<script>
+  const prices = [
+  {item:"laptop", price: 3000}, 
+  {item:"TV", price: 1500}, 
+  {item:"Mouse", price: 2500}, 
+  {item:"AC", price: 4000}
+];
+
+  
+  // p arrow function will take each product p from an array and return a new object 
+  // ...(spread) means- it will copy all properties of the original product and apply discount on it 
+  const discountedPrices = prices.map(p => ({...p , price :p.price * 0.10}));
+  document.writeln("Discounted Prices (10% off): " + JSON.stringify(discountedPrices) + "<br><br>"); //JSON.stringify is used to convert it into json
+  const filteredPrices = discountedPrices.filter(p => p.price > 200);
+  document.writeln("Filtered Prices (>2000): " + JSON.stringify(filteredPrices) + "<br><br>");
+  const totalPrice = discountedPrices.reduce((sum, p) => sum + p.price, 0);
+  document.writeln("Total Accumulated Price: " + totalPrice);
+ document.getElementById("output").textContent = totalPrice;
+</script>
+</body>
+</html>
+</body>
+</html>

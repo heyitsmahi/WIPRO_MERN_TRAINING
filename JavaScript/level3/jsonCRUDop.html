@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {font-family: Arial;}
+    </style>
+</head>
+<body>
+    <!--Create a program to perform CRUD various operations using fetch api -- HTMl provides get , post  ,delete , put
+    1. Fetch users from an api and display them in a list
+    2. Add a new user using post request
+    3. Update a user by ID using PUT request
+    4. Delete a user by ID using Delete request  
+    -->
+
+    <h3> User Management Operations</h3>
+
+    <button onclick="fetchUser()">Fetch Users</button>
+     <button onclick="addUser()">Add Users</button>
+      <button onclick="updateUser()">Update Users</button>
+       <button onclick="deleteUser()">Delete Users</button>
+        <ul id="users"></ul>
+       <!-- API --application programming interface used to communicate between two applications may be created in different
+        languages -->
+<script>
+
+    const apiurl = "https://jsonplaceholder.typicode.com/users";
+    const ul = document.getElementById("users");
+
+      function fetchUser(){
+        fetch(apiurl)
+        .then(res=> res.json())
+        .then(users => {
+                  
+            users.forEach(user => {
+   
+            const li =  document.createElement("li");
+            li.textContent = `User Name : ${user.username} - EMail : ${user.email}`;
+             ul.append(li); 
+             });
+
+        })
+        .catch(err=> console.error(err))
+      }
+      function addUser(){
+
+        const newUser = {
+            name: "Niti",
+            email:"abc@gmail.com"
+        }
+
+        fetch(apiurl,{
+
+                method:"POST",
+                headers:{"Content-Type": "application/json"},
+                body:JSON.stringify(newUser)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            alert("User data is added");
+            fetchUser();
+        })
+      }
+      function updateUser(){
+
+         const id = prompt("Enter the id to update the records") ;
+
+         fetch(`${apiurl}/${id}`,{
+
+                method:"PUT",
+                headers:{"Content-Type": "application/json"},
+                body:JSON.stringify({name:"updated username", email:"xyz@gmail.com"})
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            alert("User updated");
+            fetchUser();
+        })
+
+      }
+      function deleteUser(){
+
+        
+         const id = prompt("Enter the id to delete the record") ;
+
+         fetch(`${apiurl}/${id}`,{
+
+                method:"DELETE",
+                
+        })
+        
+        .then(()=>{
+            alert("User deleted");
+            fetchUser();
+        })
+
+      }
+
+</script>
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product CRUD</title>
+    <style>
+        body { font-family: Arial; }
+    </style>
+</head>
+<body>
+
+<h3>Product Management Operations</h3>
+
+<button onclick="fetchProducts()">Fetch Products</button>
+<button onclick="addProduct()">Add Product</button>
+<button onclick="updateProduct()">Update Product</button>
+<button onclick="deleteProduct()">Delete Product</button>
+
+<ul id="products"></ul>
+
+<script>
+    // Product JSON Data
+    let products = [
+        { item: "Laptop", price: 60000 },
+        { item: "Mouse", price: 500 },
+        { item: "Keyboard", price: 700 },
+        { item: "Speaker", price: 5000 }
+    ];
+
+    const ul = document.getElementById("products");
+
+    // GET - Fetch Products
+    function fetchProducts() {
+        ul.innerHTML = "";
+        products.forEach((product, index) => {
+            const li = document.createElement("li");
+            li.textContent = `ID: ${index} | Item: ${product.item} | Price: ₹${product.price}`;
+            ul.appendChild(li);
+        });
+    }
+
+    // POST - Add Product
+    function addProduct() {
+        const item = prompt("Enter product name");
+        const price = prompt("Enter product price");
+
+        if (item && price) {
+            products.push({ item, price: Number(price) });
+            alert("Product Added");
+            fetchProducts();
+        }
+    }
+
+    // PUT - Update Product
+    function updateProduct() {
+        const id = prompt("Enter product ID to update");
+
+        if (products[id]) {
+            const newItem = prompt("Enter new product name", products[id].item);
+            const newPrice = prompt("Enter new price", products[id].price);
+
+            products[id] = {
+                item: newItem,
+                price: Number(newPrice)
+            };
+
+            alert("Product Updated");
+            fetchProducts();
+        } else {
+            alert("Invalid Product ID");
+        }
+    }
+
+    // DELETE - Delete Product
+    function deleteProduct() {
+        const id = prompt("Enter product ID to delete");
+
+        if (products[id]) {
+            products.splice(id, 1);
+            alert("Product Deleted");
+            fetchProducts();
+        } else {
+            alert("Invalid Product ID");
+        }
+    }
+</script>
+
+</body>
+</html>-->

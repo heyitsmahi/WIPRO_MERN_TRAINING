@@ -1,0 +1,52 @@
+<!--let's say you are building an todo task directory page for a company dashboard
+
+so implement below steps:
+
+1. fetch users todo task  data from the backend
+2. display user id, email and completed status
+3. show only first 5 users tasks
+
+handle the api failure using Promise .catch()  
+
+https://jsonplaceholder.typicode.com/todos  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> ToDo Tasks</h3>
+    <ul id="todoList"></ul>
+    <script>
+        fetch("https://jsonplaceholder.typicode.com/todos")
+        .then(response => response.json())
+
+        .then(todo => { 
+            const ul=document.getElementById("todoList");
+            todo.slice(0,5).forEach(todo => {
+                const li=document.createElement("li");
+                li.textContent=`User Id: ${todo.userId} - Id: ${todo.id} - Completed Status: ${todo.completed}`;
+                ul.append(li);
+            });
+        })
+        .catch(error => console.error("Error while loading the data",error));
+        
+        const myPromise = new Promise((resolve,reject) => {
+            setTimeout(()=>
+        {
+            const success = true;
+            if(success) resolve("Data is getting fetched")
+            else reject("Some error is there while fetching")
+        },1000)
+        });
+
+        myPromise
+        .then(result => console.log(result))
+        .catch(error => console.log(error));
+    </script>
+</body>
+</html>
