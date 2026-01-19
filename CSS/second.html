@@ -1,0 +1,123 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box{
+            border:30px ;
+            width: 70px;
+            padding: 30px;
+            margin: 15px;
+            color: rgb(244, 150, 10);
+            background-color: rgb(152, 45, 45);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        One 
+    </div>
+    <h1>FashIon</h1>
+    <div class="navbar">
+        <div>About Us</div>
+        <div>Contact Us</div>
+        <div>Categories</div>
+        <div>Men's</div>
+        <div>Women's</div>
+
+
+    </div>
+   
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Mall</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        
+    <h1>Shopping Mall</h1>
+    <nav class="tabs">
+        <input type="radio" id="home-tab" name="tab" checked>
+        <label for="home-tab" class="tab-label">Home</label>
+        
+        <input type="radio" id="men-tab" name="tab">
+        <label for="men-tab" class="tab-label">Men</label>
+        
+        <input type="radio" id="women-tab" name="tab">
+        <label for="women-tab" class="tab-label">Women</label>
+        
+        <input type="radio" id="kids-tab" name="tab">
+        <label for="kids-tab" class="tab-label">Kids</label>
+        
+        <input type="radio" id="groceries-tab" name="tab">
+        <label for="groceries-tab" class="tab-label">Groceries</label>
+        
+        <a href="#about" class="tab-link">About</a>
+        <a href="#contact" class="tab-link">Contact</a>
+    </nav>
+</header>
+
+    </header>
+
+   <section class="tab-content">
+    <section id="home" class="tab-panel">
+        <div class="hero">
+            <h2>Welcome!</h2>
+            <p>Latest deals on fashion & groceries.</p>
+        </div>
+    </section>
+    
+    <section id="men" class="tab-panel category">
+        <h2>Men Clothes</h2>
+        <div class="grid">
+            <div class="product">
+                <img src="https://campussutra.com/cdn/shop/files/SCS21_CSMSSRT216_1.webp?v=1708760257&width=2000" alt="Shirt">
+                <h3>Casual Shirt</h3>
+                <p class="price">$Starting From 525</p>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Repeat for 5-7 products -->
+        </div>
+    </section>
+    <!-- Repeat identical structure for #women, #kids, #groceries -->
+      <section id="women" class="tab-panel category">
+        <h2>Women Clothes</h2>
+        <div class="grid">
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/61m1D-aTPNL._AC_UY1100_.jpg" alt="Kurti">
+                <h3>Casual Kurti</h3>
+                <p class="price">Starting From 300</p>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Repeat for 5-7 products -->
+        </div>
+    </section>
+</section>
+
+
+    <!-- Repeat for #women, #kids, #groceries with similar grid -->
+
+    <section id="about">
+        <h2>About Us</h2>
+        
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@mall.com | Phone: 9990000000</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Shopping Mall</p>
+    </footer>
+</body>
+</html>

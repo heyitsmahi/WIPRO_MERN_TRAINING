@@ -1,0 +1,128 @@
+What are Links in HTML?
+A link in HTML is a clickable element (text or image) that redirects the user to another webpage, file, or resource.
+Links make a website interactive, user-friendly, and connected to other resources on the internet.
+Basic Syntax:
+
+<a href="URL">Clickable Text</a>
+Anchor Tag <a> in HTML
+The <a> (anchor) tag is used to create links.
+Basic Syntax:
+
+<a href="url">Link Text</a>
+	• href → Hyperlink Reference (destination URL).
+	• Link Text → The clickable text visible to users.
+Example:
+
+<a href="https://www.example.com">Visit Example Website</a>
+Here are the main types of links: 
+a) Absolute URL (External Links)
+A complete web address including https:// or http://.
+Always points to the same resource, no matter where your website is hosted.
+Example : 
+
+<a href="https://www.google.com">Go to Google</a>
+b) Relative URL (Internal Links)
+A shorter path that points to files or pages inside your own website.
+Depends on your website’s folder structure.
+Example : 
+
+<a href="about.html">About Us</a>
+c) Email Links (mailto:)
+Opens the default email client to send a mail.
+Example :
+
+<a href="mailto:info@example.com">Send Email</a>
+d) Phone Links (tel:)
+Useful for mobile users to dial numbers directly.
+Example : 
+
+<a href="tel:+919876543210">Call Us</a>
+e) Internal Page Navigation (Bookmarks)
+Jump to a specific section on the same page.
+They are useful when the page is long, so users don’t need to scroll manually.
+Example :
+
+<a href="#contact">Go to Contact Section</a>
+<h2 id="contact">Contact Us</h2>
+<p>Email: info@example.com</p>
+	• id="contact" → creates the bookmark spot.
+	• href="#contact" → jumps to that spot when clicked.
+f) Download Links
+Links can also be used to download files.
+Example :
+
+<a href="files/tutorial.pdf" download>Download PDF</a>
+g) Image Links
+An image can also be clickable as a link.
+Example :
+
+<a href="https://example.com">
+  <img src="logo.png" alt="Company Logo">
+</a>
+Opening Links in a New Tab
+You can use target="_blank" to open links in a new browser tab.
+Example :
+
+<a href="https://www.wikipedia.org" target="_blank">Open Wikipedia</a>
+Why Links are Important?
+	• They connect webpages together and form the structure of the web.
+	• Improve user navigation and experience.
+	• Help search engines crawl and index pages effectively.
+Allow for interaction beyond the site (emails, downloads, external resources).
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>Link Colors Example</title>
+  <style>
+    /* Unvisited link */
+    a:link {
+      color: blue;
+    }
+/* Visited link */
+    a:visited {
+      color: purple;
+    }
+/* Mouse hover */
+    a:hover {
+      color: red;
+      text-decoration: underline;
+    }
+/* Active (when clicked) */
+    a:active {
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+<h2>Link Colors Demo</h2>
+  <p>
+    <a href="https://www.wikipedia.org" target="_blank">Visit Wikipedia</a><br>
+    <a href="https://www.google.com" target="_blank">Visit Google</a>
+  </p>
+
+
+ 
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>
+
+</body>
+</html>

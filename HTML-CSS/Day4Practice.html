@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74a8eb, #9face6);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            background: white;
+            margin: 60px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #042666;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #570384;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #9dc1fe;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div class="container" id="loginPage">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter Username">
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- WELCOME PAGE -->
+<div class="container hidden" id="welcomePage">
+    <h2>Welcome Student 🎓</h2>
+    <button onclick="showMonthly()">Monthly Activity</button>
+</div>
+
+<!-- MONTHLY ACTIVITY PAGE -->
+<div class="container hidden" id="activityPage">
+    <h2>Monthly Activities</h2>
+
+    <select id="subjectSelect" onchange="showActivities()">
+        <option value="">Select Subject</option>
+        <option value="Maths">Maths</option>
+        <option value="Science">Science</option>
+        <option value="English">English</option>
+    </select>
+
+    <ul id="activityList"></ul>
+</div>
+
+<script>
+    // Monthly activities array
+    const activities = [
+        { id: 1, activity: "Create project file which contains tables between 12 to 19", subject: "Maths" },
+        { id: 2, activity: "Solve algebra worksheets", subject: "Maths" },
+        { id: 3, activity: "Prepare science model", subject: "Science" },
+        { id: 4, activity: "Write lab observation", subject: "Science" },
+        { id: 5, activity: "Write essay on environment", subject: "English" },
+        { id: 6, activity: "Read grammar chapters", subject: "English" }
+    ];
+
+    function login() {
+        let user = document.getElementById("username").value;
+        let pass = document.getElementById("password").value;
+
+        if (user === "student" && pass === "12345") {
+            document.getElementById("loginPage").classList.add("hidden");
+            document.getElementById("welcomePage").classList.remove("hidden");
+        } else {
+            alert("Invalid Username or Password");
+        }
+    }
+
+    function showMonthly() {
+        document.getElementById("welcomePage").classList.add("hidden");
+        document.getElementById("activityPage").classList.remove("hidden");
+    }
+
+    function showActivities() {
+        let subject = document.getElementById("subjectSelect").value;
+        let list = document.getElementById("activityList");
+        list.innerHTML = "";
+
+        let filteredActivities = activities.filter(a => a.subject === subject);
+
+        filteredActivities.forEach(act => {
+            let li = document.createElement("li");
+            li.textContent = act.activity;
+            list.appendChild(li);
+        });
+    }
+</script>
+
+</body>
+</html>
