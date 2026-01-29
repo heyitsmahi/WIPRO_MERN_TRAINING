@@ -1,0 +1,31 @@
+.employee-container {
+  width: 70%;
+  margin: 40px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employee-table th,
+.employee-table td {
+  border: 1px solid #333;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.employee-table thead {
+  background-color: #f2f2f2;
+}
+
+.employee-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
