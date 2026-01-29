@@ -1,0 +1,27 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Leather Boots",
+      "category": "men",
+      "image": "/images/boots.jpg",
+      "price": 1999
+    },
+    {
+      "id": 2,
+      "name": "Women Jacket",
+      "category": "women",
+      "image": "/images/jacket.jpg",
+      "price": 2499
+    },
+    {
+      "id": 3,
+      "name": "Ladies Bag",
+      "category": "women",
+      "image": "/images/bag.jpg",
+      "price": 1799
+    }
+  ],
+  "users": []
+}
+
