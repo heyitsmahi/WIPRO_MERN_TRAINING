@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "price": 55000,
+      "category": "Electronics"
+    },
+    {
+      "id": "2",
+      "name": "Charger",
+      "price": 2500,
+      "category": "Electronics"
+    },
+    {
+      "id": "582c",
+      "name": "shirt",
+      "price": "300",
+      "category": "Fashion"
+    },
+    {
+      "id": "dc19",
+      "name": "mosue",
+      "price": "300",
+      "category": "electronics"
+    },
+    {
+      "id": "ca00",
+      "name": "Mouse2",
+      "price": "400",
+      "category": "electronics"
+    }
+  ]
+}
