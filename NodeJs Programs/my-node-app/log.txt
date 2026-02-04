@@ -1,0 +1,2 @@
+This is an example file created using NodeJS
+ Appending a new line to the existing dile
