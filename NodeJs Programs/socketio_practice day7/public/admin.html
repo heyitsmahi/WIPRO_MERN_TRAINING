@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <h2>Admin Chat Panel</h2>
+
+  <input type="text" id="message" placeholder="Type announcement" />
+  <button onclick="sendMessage()">Send</button>
+
+  <ul id="chatBox"></ul>
+
+  <script>
+    const socket = io();
+
+    function sendMessage() {
+      const msg = document.getElementById("message").value;
+      socket.emit("chat", msg);
+      document.getElementById("message").value = "";
+    }
+
+    socket.on("chat", (msg) => {
+      const listen = document.createElement("li");
+      listen.innerText = "Admin: " + msg;
+      document.getElementById("chatBox").appendChild(listen);
+    });
+  </script>
+</body>
+</html>

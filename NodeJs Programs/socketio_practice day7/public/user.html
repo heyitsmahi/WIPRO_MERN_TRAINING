@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User View</title>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <h2>Company Announcements</h2>
+
+  <ul id="chatBox"></ul>
+
+  <script>
+    const socket = io();
+
+    socket.on("chat", (msg) => {
+      const listen = document.createElement("li");
+      listen.innerText = msg;
+      document.getElementById("chatBox").appendChild(listen);
+    });
+  </script>
+</body>
+</html>
