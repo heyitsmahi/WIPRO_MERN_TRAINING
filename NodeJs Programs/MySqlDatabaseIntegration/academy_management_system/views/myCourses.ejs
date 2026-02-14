@@ -1,0 +1,9 @@
+<h2>My Courses</h2>
+
+<% if (courses.length === 0) { %>
+  No courses enrolled
+<% } %>
+
+<% courses.forEach(course => { %>
+  <p><%= course.title %></p>
+<% }) %>

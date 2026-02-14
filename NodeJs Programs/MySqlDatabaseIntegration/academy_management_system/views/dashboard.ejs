@@ -1,0 +1,14 @@
+<h2>Welcome <%= user.username %> (<%= user.role %>)</h2>
+
+<% if (user.role === "admin") { %>
+  <a href="/admin/instructor">Create Instructor</a><br>
+  <a href="/admin/course">Create Course</a><br>
+  <a href="/student/create">Create Student</a><br>
+  <a href="/enroll">Enroll Student</a><br>
+  <a href="/students">View Students</a><br>
+<% } %>
+<% if(user.role === "student"){ %>
+  <a href="/my-courses">My Courses</a>
+<% } %>
+
+
